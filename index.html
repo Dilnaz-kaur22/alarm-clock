@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Dilnaz Kaur" />
     <meta name="description" content="Alarm Clock" />
     <meta name="keywords" content="html,css,web development,Clock" />
@@ -12,10 +12,55 @@
     rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">     
-    <link rel="stylesheet" href="assets/style/style.css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="x-icon" href="assets/image/icon.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" />     
+    <link rel="stylesheet" href="assets/style/style.css" media="all" />
     <script src="assets/script/index.js" defer></script>
 </head>
+<body onload="initClock()">
+  <div class="alarm">
+      <div class="datetime">
+          <div class="date">
+              <span id="dayName">Day</span>,
+              <span id="month">Month</span>,
+              <span id="dayNum">00</span>,
+              <span id="year">Year</span>
+          </div>
+          <div class="time">
+              <span id="hour">00</span>:
+              <span id="minutes">00</span>:
+              <span id="seconds">00</span>
+              <span id="period">am</span>
+          </div>
+          <button id="stopAlarm" onclick="stopAlarm()">Stop Alarm</button>
+      </div>
+      <hr>
+      <div class="setAlarm">
+          <div class="column">
+              <select>
+                  <option value="setHour" selected hidden>Hour</option>
+              </select>
+          </div>
+          <div class="column">
+              <select>
+                  <option value="setMinute" selected hidden>Minute</option>     
+              </select>
+          </div>
+          <div class="column">
+              <select>
+                  <option value="AM/PM" selected hidden>AM/PM</option>
+              </select>
+          </div>
+          <button id="btn-setAlarm" type="submit">Set Alarm</button>           
+      </div>
+      <hr>
+      <h3 id="alarm-h3"></h3>
+      <div class="alarmList">    
+      </div> 
+  </div>
+  <!-- External Javascript File -->
+  <script src="script.js"></script>
+</body>
 </html>
