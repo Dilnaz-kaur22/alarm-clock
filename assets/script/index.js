@@ -1,3 +1,6 @@
+
+// variables
+
 let alarmListArr = [];
 const selectMenu = document.querySelectorAll("select");
 const setAlarmBtn = document.querySelector("#btn-setAlarm");
@@ -6,12 +9,12 @@ let alarmTime;
 let ring = new Audio("./assets/audio/alarm-sound.mp3");
 
 
-//  Time and Date
+// Script for Time and Date
 
 
 function updateClock(){
-    let now = new Date();
-    let dname = now.getDay(),
+    var now = new Date();
+    var dname = now.getDay(),
         mo = now.getMonth(),
         dnum = now.getDate(),
         yr = now.getFullYear(),
@@ -30,16 +33,16 @@ function updateClock(){
         }
 
         Number.prototype.pad = function(digits){
-            for(let n = this.toString(); n.length<digits; n=0+n);
+            for(var n = this.toString(); n.length<digits; n=0+n);
             return n;
         }
 
-        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        let week = ["Sunday", "Monday", "Tusday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        let ids =["dayName", "month", "dayNum", "year", "hour", "minutes", "seconds", "period"];
-        let values = [week[dname], months[mo], dnum.pad(2),yr,hou.pad(2),min.pad(2),sec.pad(2),pe];
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var week = ["Sunday", "Monday", "Tusday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var ids =["dayName", "month", "dayNum", "year", "hour", "minutes", "seconds", "period"];
+        var values = [week[dname], months[mo], dnum.pad(2),yr,hou.pad(2),min.pad(2),sec.pad(2),pe];
         
-        for(let i=0; i<ids.length;i++){
+        for(var i=0; i<ids.length;i++){
             document.getElementById(ids[i]).firstChild.nodeValue = values[i];
         }
 
@@ -100,7 +103,6 @@ function setAlarm(){
         alarmListArr.push(alarmTime);
         console.log(document.querySelector(".btn-delete").value);
     }
-
 }
 
 setAlarmBtn.addEventListener("click",setAlarm);
@@ -108,8 +110,8 @@ setAlarmBtn.addEventListener("click",setAlarm);
 //delete alarm
 
 function deleteAlarm(click_id){
-    let element = document.getElementById("alarm"+click_id);
-    let deleteIndex = alarmListArr.indexOf(document.querySelector("#span"+click_id).innerText);
+    var element = document.getElementById("alarm"+click_id);
+    var deleteIndex = alarmListArr.indexOf(document.querySelector("#span"+click_id).innerText);
     alarmListArr.splice(deleteIndex,1);
     element.remove();
 }
