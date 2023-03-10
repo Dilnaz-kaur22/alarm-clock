@@ -1,3 +1,0 @@
-git remote add origin https://github.com/Dilnaz-kaur22/alarm-clock.git
-git branch -M main
-git push -u origin main
