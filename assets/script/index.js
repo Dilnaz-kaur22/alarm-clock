@@ -10,8 +10,8 @@ let ring = new Audio("./assets/audio/alarm-sound.mp3");
 
 
 function updateClock(){
-    var now = new Date();
-    var dname = now.getDay(),
+    let now = new Date();
+    let dname = now.getDay(),
         mo = now.getMonth(),
         dnum = now.getDate(),
         yr = now.getFullYear(),
@@ -30,16 +30,16 @@ function updateClock(){
         }
 
         Number.prototype.pad = function(digits){
-            for(var n = this.toString(); n.length<digits; n=0+n);
+            for(let n = this.toString(); n.length<digits; n=0+n);
             return n;
         }
 
-        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var week = ["Sunday", "Monday", "Tusday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var ids =["dayName", "month", "dayNum", "year", "hour", "minutes", "seconds", "period"];
-        var values = [week[dname], months[mo], dnum.pad(2),yr,hou.pad(2),min.pad(2),sec.pad(2),pe];
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let week = ["Sunday", "Monday", "Tusday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let ids =["dayName", "month", "dayNum", "year", "hour", "minutes", "seconds", "period"];
+        let values = [week[dname], months[mo], dnum.pad(2),yr,hou.pad(2),min.pad(2),sec.pad(2),pe];
         
-        for(var i=0; i<ids.length;i++){
+        for(let i=0; i<ids.length;i++){
             document.getElementById(ids[i]).firstChild.nodeValue = values[i];
         }
 
@@ -108,8 +108,8 @@ setAlarmBtn.addEventListener("click",setAlarm);
 //delete alarm
 
 function deleteAlarm(click_id){
-    var element = document.getElementById("alarm"+click_id);
-    var deleteIndex = alarmListArr.indexOf(document.querySelector("#span"+click_id).innerText);
+    let element = document.getElementById("alarm"+click_id);
+    let deleteIndex = alarmListArr.indexOf(document.querySelector("#span"+click_id).innerText);
     alarmListArr.splice(deleteIndex,1);
     element.remove();
 }

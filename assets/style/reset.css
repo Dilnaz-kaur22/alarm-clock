@@ -20,7 +20,3 @@ body{
     align-items: center;
     background:linear-gradient(rgb(202, 202, 251), rgb(162, 218, 242));
   }
-  
-  ::-webkit-scrollbar{
-    display: none;
-  }
